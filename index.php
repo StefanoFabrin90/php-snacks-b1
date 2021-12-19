@@ -74,8 +74,8 @@
         }
     ?>
 
-    <h2>Snack 3</h2>
-    <p>Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.</p>
+    <!-- <h2>Snack 3</h2>
+    <p>Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.</p> -->
 
     <?php 
         $posts = [
@@ -161,7 +161,7 @@
         ];
     ?>
 
-    <div style="background: gray;">
+    <div style="background: lightgray;">
         <?php
             for ($i = 0; $i < count($db['teachers']); $i++) {
                 echo $db['teachers'][$i]['name'].' '.$db['teachers'][$i]['lastname'].'<br>';
@@ -169,12 +169,67 @@
         ?>
 
     </div>
-    <div style="background: green;">
+    <div style="background: lightgreen;">
         <?php
             for ($i = 0; $i < count($db['pm']); $i++) {
                 echo $db['pm'][$i]['name'].' '.$db['pm'][$i]['lastname'].'<br>';
             }
         ?>
     </div>
+
+    <h2>Snack 5</h2>    
+    <p> <strong>Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.</strong> </p>
+
+    <?php
+        $par = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur modi vitae, eius vero mollitia iusto omnis quam saepe eligendi velit, suscipit esse ea deleniti ullam sapiente exercitationem autem aliquam! Iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid minus impedit, quam, doloremque tempore ducimus provident aliquam expedita laudantium et nesciunt, iure iusto maxime hic. Est, cumque. Eum, quod quisquam!';
+
+        $paragraphs = explode('.', $par);
+
+        for ($i = 0; $i < count($paragraphs); $i++) {
+            echo '<p>'.$paragraphs[$i].'</p>';
+        }
+
+    ?>
+
+    <h2>Snack 7</h2>    
+    <p>Creare un array contenente qualche alunno di un'ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.</p>
+
+    <?php
+        $students = [
+            [
+                'name' => 'Paolo',
+                'lastname' => 'Rossi',
+                'votes' => [
+                    'Matematica' => rand(2, 10),
+                    'Italiano' => rand(2, 10),
+                    'Storia' => rand(2, 10),
+                ]
+            ],
+            [
+                'name' => 'Chiara',
+                'lastname' => 'Mazzalovo',
+                'votes' => [
+                    'Matematica' => rand(2, 10),
+                    'Italiano' => rand(2, 10),
+                    'Storia' => rand(2, 10),
+                ]
+            ],
+            [
+                'name' => 'Stefano',
+                'lastname' => 'Fabrin',
+                'votes' => [
+                    'Matematica' => rand(2, 10),
+                    'Italiano' => rand(2, 10),
+                    'Storia' => rand(2, 10),
+                ]
+            ],
+        ];
+        
+        // dati studente
+        for ($i=0; $i < count($students); $i++) { 
+            echo "<h3>".$students[$i]['name']." ".$students[$i]['lastname']."<br>";
+        }
+        // media
+    ?>
 </body>
 </html>
